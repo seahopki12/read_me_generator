@@ -12,7 +12,16 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-    
+    fs.appendFile("README.md", process.argv[2] + '\n', function(err) {
+
+        if (error) {
+          console.log(error);
+        }
+        else {
+          console.log("Your README file was successfully created!");
+        }
+      
+      });
 }
 
 // function call to initialize program
