@@ -75,21 +75,18 @@ function init() {
         .prompt(questions).then(function (response) {
             console.log(response);
             let badges = [];
-            // response.licenses.forEach(function (){
-                if (response.licenses.includes("Open Database License")){
-                    badges.push("[![License: ODbL](https://img.shields.io/badge/License-ODbL-brightgreen.svg)](https://opendatacommons.org/licenses/odbl/)");
-                } 
-                if (response.licenses.includes("Mozilla Public License 2.0")){
-                    badges.push("[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)");
-                } 
-                if (response.licenses.includes("The MIT License")){
-                    badges.push("[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)");
-                } 
-                if (response.licenses.includes("ISC License")){
-                    badges.push("[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)");
-                };
-            // })
-            
+            if (response.licenses.includes("Open Database License")) {
+                badges.push("[![License: ODbL](https://img.shields.io/badge/License-ODbL-brightgreen.svg)](https://opendatacommons.org/licenses/odbl/)");
+            }
+            if (response.licenses.includes("Mozilla Public License 2.0")) {
+                badges.push("[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)");
+            }
+            if (response.licenses.includes("The MIT License")) {
+                badges.push("[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)");
+            }
+            if (response.licenses.includes("ISC License")) {
+                badges.push("[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)");
+            };
             let readme = `# ${response.title}
 ## Table of Contents
 ${badges}
@@ -115,7 +112,7 @@ ${response.licenses}
 ## Questions
 [${response.github}](https://github.com/${response.github})
 
-[${response.email}](${response.email})`;
+<${response.email}>`;
 
 
             // function badgeSelection() {
