@@ -74,9 +74,25 @@ function init() {
     inquirer
         .prompt(questions).then(function (response) {
             console.log(response);
+            let badges = [];
+            // response.licenses.forEach(function (){
+                if (response.licenses.includes("Open Database License")){
+                    badges.push("[![License: ODbL](https://img.shields.io/badge/License-ODbL-brightgreen.svg)](https://opendatacommons.org/licenses/odbl/)");
+                } 
+                if (response.licenses.includes("Mozilla Public License 2.0")){
+                    badges.push("[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)");
+                } 
+                if (response.licenses.includes("The MIT License")){
+                    badges.push("[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)");
+                } 
+                if (response.licenses.includes("ISC License")){
+                    badges.push("[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)");
+                };
+            // })
+            
             let readme = `# ${response.title}
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 ## Table of Contents
+${badges}
 * [Description](#description)
 * [Installation Instructions](#installation-instructions)
 * [Usage Information](#usage-information)
@@ -100,6 +116,22 @@ ${response.licenses}
 [${response.github}](https://github.com/${response.github})
 
 [${response.email}](${response.email})`;
+
+
+            // function badgeSelection() {
+            //     let badges = ["[![License: ODbL](https://img.shields.io/badge/License-ODbL-brightgreen.svg)](https://opendatacommons.org/licenses/odbl/)",
+            //         "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)",
+            //         "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+            //         "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)"
+            //     ];
+            //     let badgesReal = [];
+            //     if (response.licenses.includes("Open Database License") {
+            //         badgesReal.push(badges[0]);
+            //     }) else if (response.licenses.includes("Mozilla Public License 2.0") {
+            //         badgesReal.push(badges[1]);
+            //     })
+            // }
+
             writeToFile("README.md", readme);
         });
 };

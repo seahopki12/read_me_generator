@@ -1,13 +1,13 @@
 # test
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 ## Table of Contents
+
 * [Description](#description)
 * [Installation Instructions](#installation-instructions)
 * [Usage Information](#usage-information)
 * [Contribution Guidelines](#contribution-guidelines)
 * [Test Instructions](#test-instructions)
 * [Licenses](#licenses)
-* [Contact Information](#contact-information)
+* [Questions](#questions)
 ## Description
 test
 ## Installation Instructions
@@ -19,8 +19,8 @@ test
 ## Test Instructions
 test
 ## Licenses
-Open Database License,Mozilla Public License 2.0,The MIT License,ISC License
-## Contact Information
+
+## Questions
 [test](https://github.com/test)
 
 [test](test)
