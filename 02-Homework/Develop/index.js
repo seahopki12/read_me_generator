@@ -66,23 +66,40 @@ function writeToFile(fileName, data) {
             throw error;
         };
     });
-    // fs.appendFile('README.md', `# ${response.title}`, function (error) {
-    //     if (error) {
-    //         throw error;
-    //     };
-    // });
-
 };
 
 
 // function to initialize program
 function init() {
-    // Loops through the prompts
-    // for (let i = 0; i < questions.length - 1; i++) {
     inquirer
         .prompt(questions).then(function (response) {
             console.log(response);
-            let readme = `# * ${response.title}`;
+            let readme = `# ${response.title}
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+## Table of Contents
+* [Description](#description)
+* [Installation Instructions](#installation-instructions)
+* [Usage Information](#usage-information)
+* [Contribution Guidelines](#contribution-guidelines)
+* [Test Instructions](#test-instructions)
+* [Licenses](#licenses)
+* [Questions](#questions)
+## Description
+${response.description}
+## Installation Instructions
+${response.installation}
+## Usage Information
+${response.usage}
+## Contribution Guidelines
+${response.contribution}
+## Test Instructions
+${response.test}
+## Licenses
+${response.licenses}
+## Questions
+[${response.github}](https://github.com/${response.github})
+
+[${response.email}](${response.email})`;
             writeToFile("README.md", readme);
         });
 };
